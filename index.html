@@ -1,528 +1,163 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Firebrand Systems | Fire, Security, Video & Monitoring</title>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <title>Firebrand Systems | Fire, Security, Video & Monitoring</title>
+  <meta name="description" content="Residential and commercial fire alarm, burglar alarm, video surveillance, access control, and monitoring.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-
-  <!-- Basic reset + typography (optional if already in styles.css) -->
-  <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #1b1b1b;
-      background: #f7f7f7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .btn-primary {
-      background: #e53935;
-      color: #fff;
-    }
-
-    .btn-secondary {
-      background: #ffffff;
-      color: #e53935;
-      border: 1px solid #e53935;
-    }
-
-    header {
-      background: #111;
-      color: #fff;
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    header .logo img {
-      height: 32px;
-    }
-
-    header .contact {
-      text-align: right;
-      font-size: 0.9rem;
-    }
-
-    header .contact a {
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .hero {
-      background: #1f1f1f;
-      color: #fff;
-      padding: 3rem 1.5rem;
-      text-align: center;
-    }
-
-    .hero-inner {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero p.subline {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero .cta-group {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero .service-tags {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      opacity: 0.85;
-    }
-
-    .hero .service-tag {
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.25);
-    }
-
-    .section {
-      padding: 3rem 1.5rem;
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .section p.lead {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      max-width: 700px;
-    }
-
-    .three-boxes {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .three-boxes .box {
-      background: #fff;
-      border-radius: 6px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    }
-
-    .three-boxes .box h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .three-boxes .box ul {
-      margin: 0.5rem 0 0;
-      padding-left: 1.1rem;
-      font-size: 0.95rem;
-    }
-
-    .core-services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .core-service {
-      background: #fff;
-      border-radius: 6px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    }
-
-    .core-service h3 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .core-service p {
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
-    }
-
-    .two-columns {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .industries-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 0.75rem;
-      font-size: 0.95rem;
-    }
-
-    .industries-grid div {
-      background: #fff;
-      border-radius: 4px;
-      padding: 0.75rem 1rem;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-
-    .start-here {
-      background: #ffffff;
-      border-radius: 6px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-    }
-
-    .start-here form {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 0.75rem;
-    }
-
-    .start-here label {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .start-here input,
-    .start-here textarea,
-    .start-here select {
-      width: 100%;
-      padding: 0.5rem 0.6rem;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 0.95rem;
-    }
-
-    .start-here button {
-      margin-top: 0.5rem;
-      width: 100%;
-    }
-
-    footer {
-      background: #111;
-      color: #ccc;
-      padding: 2rem 1.5rem;
-      font-size: 0.9rem;
-    }
-
-    footer .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    footer h4 {
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    footer ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    footer li {
-      margin-bottom: 0.35rem;
-    }
-
-    footer .legal {
-      margin-top: 1.5rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: #888;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <img src="assets/firebrand-logo.png" alt="Firebrand Systems logo">
-      <div>
-        <strong>Firebrand Systems</strong><br>
-        <span>Fire, Security, Video & Monitoring</span>
-      </div>
+<header class="utility">
+  <div class="container utility-inner">
+    <span>Residential and commercial fire, security, video, access control, and monitoring</span>
+    <a href="tel:8437795552">843-779-5552</a>
+  </div>
+</header>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Firebrand Systems home">
+      <img src="firebrand-logo.png" alt="Firebrand Systems logo">
+      <span>FIREBRAND <em>SYSTEMS</em></span>
+    </a>
+    <div class="nav-links">
+      <a href="residential.html">Residential</a>
+      <a href="commercial.html">Commercial</a>
+      <a href="fire-alarm.html">Fire Alarm</a>
+      <a href="security-systems.html">Security</a>
+      <a href="video-surveillance.html">Video</a>
+      <a href="access-control.html">Access Control</a>
+      <a href="monitoring.html">Monitoring</a>
+      <a class="button nav-button" href="contact.html">Get a Quote</a>
     </div>
-    <div class="contact">
-      <div>Call now for 24/7 protection</div>
-      <a href="tel:18435555555">(843) 555‑5555</a><br>
-      <span>Serving South Carolina</span>
-    </div>
-  </header>
+  </div>
+</nav>
 
-  <!-- HERO -->
+
+<main id="top">
   <section class="hero">
-    <div class="hero-inner">
-      <h1>Fire, Security, Video & Monitoring — Done Right.</h1>
-      <p class="subline">
-        Residential and commercial protection across South Carolina. Design, installation, monitoring and support from one trusted partner.
-      </p>
-
-      <div class="cta-group">
-        <a href="#start-here" class="btn btn-primary">Request a Quote</a>
-        <a href="#start-here" class="btn btn-secondary">Request a Site Survey</a>
-      </div>
-
-      <div class="service-tags">
-        <span class="service-tag">Fire Alarm Systems</span>
-        <span class="service-tag">Security & Intrusion</span>
-        <span class="service-tag">Video Surveillance</span>
-        <span class="service-tag">Access Control</span>
-        <span class="service-tag">24/7 Monitoring</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- THREE BOXES: RESIDENTIAL / COMMERCIAL / INSTALLED.MONITORED.SUPPORTED -->
-  <section class="section">
-    <div class="section-inner">
-      <div class="three-boxes">
-        <div class="box">
-          <h3>Residential Protection</h3>
-          <p>
-            Protect your home and family with professionally designed fire, security and video systems that are monitored 24/7.
-          </p>
-          <ul>
-            <li>Fire alarm and smoke detection</li>
-            <li>Security and intrusion systems</li>
-            <li>Doorbell and perimeter cameras</li>
-          </ul>
-        </div>
-
-        <div class="box">
-          <h3>Commercial Protection</h3>
-          <p>
-            Code‑compliant systems for offices, retail, warehouses, churches, schools and more—designed to meet your operational needs.
-          </p>
-          <ul>
-            <li>NFPA‑aligned fire alarm design</li>
-            <li>Intrusion and access control</li>
-            <li>Video coverage for critical areas</li>
-          </ul>
-        </div>
-
-        <div class="box">
-          <h3>
-            Installed.<br>
-            Monitored.<br>
-            Supported.
-          </h3>
-          <p>
-            From first site survey to ongoing service, Firebrand Systems stays with you for the life of your system.
-          </p>
-          <ul>
-            <li>Turn‑key installation</li>
-            <li>24/7 central station monitoring</li>
-            <li>Local support and maintenance</li>
-          </ul>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Fire alarm, security, video, and monitoring</p>
+        <h1>Protection systems for homes, businesses, and properties that need dependable response.</h1>
+        <p class="lead">Firebrand Systems installs and monitors fire, burglary, video, and access control systems for residential and commercial customers across South Carolina.</p>
+        <div class="actions">
+          <a class="button" href="contact.html">Request a Site Survey</a>
+  
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- CORE SERVICES -->
-  <section class="section">
-    <div class="section-inner">
-      <h2>Core Systems We Design, Install & Support</h2>
-      <p class="lead">
-        Firebrand Systems delivers integrated life‑safety and security solutions that scale from single homes to complex commercial facilities.
-      </p>
-
-      <div class="core-services-grid">
-        <div class="core-service">
-          <h3>Fire Alarm Systems</h3>
-          <p>
-            Complete fire alarm solutions including panels, detectors, notification appliances and communicators, designed to meet code and protect lives.
-          </p>
-          <p>
-            We handle design, permitting, installation, testing and ongoing inspections.
-          </p>
-        </div>
-
-        <div class="core-service">
-          <h3>Security & Intrusion</h3>
-          <p>
-            Burglar alarms, door and window contacts, motion detection and environmental sensors tailored to your property and risk profile.
-          </p>
-          <p>
-            Arm, disarm and manage your system from mobile or desktop.
-          </p>
-        </div>
-
-        <div class="core-service">
-          <h3>Video Surveillance</h3>
-          <p>
-            High‑definition cameras, recording and remote viewing so you can see what’s happening on‑site from anywhere.
-          </p>
-          <p>
-            Coverage planning to reduce blind spots and protect critical areas.
-          </p>
-        </div>
-
-        <div class="core-service">
-          <h3>Access Control</h3>
-          <p>
-            Control who enters and when with card, fob or keypad systems integrated with your security and video platforms.
-          </p>
-          <p>
-            Ideal for offices, schools, churches and multi‑tenant facilities.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESIDENTIAL / COMMERCIAL + INDUSTRIES -->
-  <section class="section">
-    <div class="section-inner two-columns">
-      <div>
-        <h2>Residential Solutions</h2>
-        <p class="lead">
-          Whether you’re building new or upgrading an existing home, we design systems that fit how you live—not just how the equipment works.
-        </p>
+      <div class="hero-panel">
+        <img src="assets/firebrand-logo.png" alt="">
+        <h2>Installed.<br> Monitored.<br> Supported.</h2>
         <ul>
-          <li>Single‑family homes</li>
-          <li>Townhomes and condos</li>
-          <li>Vacation and rental properties</li>
-        </ul>
-
-        <h2 style="margin-top:2rem;">Commercial Solutions</h2>
-        <p class="lead">
-          From small offices to complex campuses, we deliver systems that support safety, operations and compliance.
-        </p>
-        <ul>
-          <li>Offices and professional suites</li>
-          <li>Retail and restaurants</li>
-          <li>Warehouses and industrial</li>
-          <li>Churches and schools</li>
-          <li>Medical clinics and multifamily</li>
+          <li>Fire alarm systems and communicators</li>
+          <li>Burglar alarms and intrusion detection</li>
+          <li>Indoor and outdoor video surveillance</li>
+          <li>Video verification and remote monitoring</li>
+          <li>Access control for doors, gates, and offices</li>
         </ul>
       </div>
+    </div>
+  </section>
 
+  <section class="section proof">
+    <div class="container proof-grid">
+      <div><strong>24/7</strong><span>Monitoring options</span></div>
+      <div><strong>Fire</strong><span>Alarm install and signal routing</span></div>
+      <div><strong>Video</strong><span>Cameras, recording, and verification</span></div>
+      <div><strong>Security</strong><span>Residential and commercial protection</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow red">Core services</p>
+      <h2>One company for the systems that protect the property.</h2>
+      <div class="cards">
+        <article class="card"><h3>Fire Alarm</h3><p>Fire alarm installation, communicator upgrades, monitoring, and service.</p><a href="fire-alarm.html">Fire alarm services</a></article>
+        <article class="card"><h3>Security Systems</h3><p>Door contacts, motion sensors, glass-break detection, panic devices, and cellular backup.</p><a href="security-systems.html">Security systems</a></article>
+        <article class="card"><h3>Video Surveillance</h3><p>IP cameras, recording, remote viewing, exterior coverage, and video verification.</p><a href="video-surveillance.html">Video surveillance</a></article>
+        <article class="card"><h3>Access Control</h3><p>Card readers, mobile credentials, electric door hardware, schedules, and audit logs.</p><a href="access-control.html">Access control</a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section split-section">
+    <div class="container split">
       <div>
-        <h2>Industries We Serve</h2>
-        <p class="lead">
-          Firebrand Systems supports a wide range of facilities across South Carolina with tailored fire, security and monitoring solutions.
-        </p>
-        <div class="industries-grid">
-          <div>Homes & Residences</div>
-          <div>Offices & Professional</div>
-          <div>Retail & Restaurants</div>
-          <div>Warehouses & Industrial</div>
-          <div>Churches & Ministries</div>
-          <div>Schools & Education</div>
-          <div>Medical & Clinics</div>
-          <div>Multifamily & HOA</div>
-        </div>
+        <p class="eyebrow red">Residential</p>
+        <h2>Security and life-safety systems for homes.</h2>
+        <p>Practical protection for homeowners, including intrusion detection, smoke and heat detection, cameras, doorbell video, remote app access, and monitored response.</p>
+        <a class="button" href="residential.html">Residential Services</a>
+      </div>
+      <div class="checklist">
+        <span>Home burglar alarms</span><span>Smoke, heat, and CO detection</span><span>Outdoor cameras</span><span>Remote app access</span><span>Video doorbells</span><span>Monitoring</span>
       </div>
     </div>
   </section>
 
-  <!-- START HERE FORM -->
-  <section class="section" id="start-here">
-    <div class="section-inner">
-      <h2>Start Your Quote or Site Survey</h2>
-      <p class="lead">
-        Tell us a little about your property and what you need. We’ll follow up with options, pricing and next steps.
-      </p>
-
-      <div class="start-here">
-        <form action="mailto:info@firebrandsystems.com" method="post" enctype="text/plain">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="Name" type="text" required>
-          </div>
-
-          <div>
-            <label for="email">Email</label>
-            <input id="email" name="Email" type="email" required>
-          </div>
-
-          <div>
-            <label for="phone">Phone</label>
-            <input id="phone" name="Phone" type="tel">
-          </div>
-
-          <div>
-            <label for="property-type">Property Type</label>
-            <select id="property-type" name="Property Type">
-              <option value="">Select one</option>
-              <option>Residential</option>
-              <option>Commercial</option>
-              <option>Church</option>
-              <option>School</option>
-              <option>Medical</option>
-              <option>Multifamily</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="services">Services Needed</label>
-            <input id="services" name="Services Needed" type="text" placeholder="Fire alarm, security, video, access control, monitoring…">
-          </div>
-
-          <div>
-            <label for="details">Project Details</label>
-            <textarea id="details" name="Project Details" rows="4" placeholder="Tell us about your building, timeline and any requirements."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Submit Request</button>
-        </form>
+  <section class="section dark">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Commercial</p>
+        <h2>Fire and security systems for operational sites.</h2>
+        <p>Support for fire alarm, intrusion, access control, camera systems, service calls, tenant changes, and monitoring workflows.</p>
+        <a class="button secondary" href="commercial.html">Commercial Services</a>
+      </div>
+      <div class="checklist dark-list">
+        <span>Offices and retail</span><span>Warehouses</span><span>Churches</span><span>Medical offices</span><span>Property management</span><span>Service and upgrades</span>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow red">Industries served</p>
+      <h2>Built for homes, businesses, and managed properties.</h2>
+      <div class="industry-grid">
+        <span>Homes</span><span>Offices</span><span>Retail</span><span>Warehouses</span>
+        <span>Churches</span><span>Schools</span><span>Medical clinics</span><span>Multifamily</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container cta-grid">
+      <div><p class="eyebrow">Tell Firebrand Systems what property you need protected and which systems you are considering.</p></div>
+            <p>Phone: 843-779-5552<br>Email: service@firebrandsystems.com</p>
+      
+    </div>
+    
+   
+  </section>
+    </div>
+  </section>
+</main>
+
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <img src="firebrand-logo.png" alt="Firebrand Systems logo">
+      <p>Residential and commercial fire, security, video surveillance, access control, and monitoring solutions.</p>
+      <p><a href="index.html">Back to home</a></p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <p><a href="fire-alarm.html">Fire Alarm</a><br>
+      <a href="security-systems.html">Security Systems</a><br>
+      <a href="video-surveillance.html">Video Surveillance</a><br>
+      <a href="access-control.html">Access Control</a><br>
+      <a href="monitoring.html">Monitoring</a></p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>843-779-5552<br>service@firebrandsystems.com<br>South Carolina</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
